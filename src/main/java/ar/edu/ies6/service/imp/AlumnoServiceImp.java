@@ -15,7 +15,7 @@ public class AlumnoServiceImp implements IAlumnoService{
 	public void guardarAlumno(Alumno alumno) {
 		// TODO Auto-generated method stub
 		AlmacenAlumnos.AlmacenAlumnos.add(alumno);
-		
+		//System.out.println(AlmacenAlumnos.AlmacenAlumnos.get(0).getDni());
 	}
 
 	@Override
