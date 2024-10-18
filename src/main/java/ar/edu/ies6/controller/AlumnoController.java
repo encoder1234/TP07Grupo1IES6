@@ -26,12 +26,12 @@ public class AlumnoController {
 public ModelAndView getIndexWithAlumno() {
 	//codigo
 	//creado el alumno
-	//Patron de diseño SINGLETON
-	//Alumno unAlumno = new Alumno();
-	//unAlumno.setApellido("Jaime");
-	//unAlumno.setNombre("Nose");
-	//unAlumno.setDni("44015619");
-	
+//Patron de diseño SINGLETON
+//Alumno unAlumno = new Alumno();
+//unAlumno.setApellido("Jaime");
+//unAlumno.setNombre("Nose");
+//unAlumno.setDni("44015619");
+
 
 	//transporte hacia la vista
 ModelAndView Transportador = new ModelAndView("index");

@@ -1,9 +1,7 @@
 package ar.edu.ies6.service.imp;
 
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import ar.edu.ies6.model.Alumno;
 import ar.edu.ies6.service.IAlumnoService;
 import ar.edu.ies6.util.AlmacenAlumnos;
@@ -14,9 +12,9 @@ public class AlumnoServiceImp implements IAlumnoService{
 	@Override
 	public void guardarAlumno(Alumno alumno) {
 		// TODO Auto-generated method stub
-		AlmacenAlumnos.alumnos.add(alumno);
-		System.out.println(AlmacenAlumnos.alumnos.get(0).getDni());
-		
+AlmacenAlumnos.alumnos.add(alumno);
+System.out.println(AlmacenAlumnos.alumnos.get(0).getDni()); // o puedes comentar esta línea si no la necesitas.
+
 	}
 
 	@Override
