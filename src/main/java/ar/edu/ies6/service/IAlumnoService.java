@@ -13,6 +13,6 @@ public interface IAlumnoService {
 	public void eliminarAlumno(String dni);
 	public void modificarAlumno(Alumno alumnoModificado);
 	public void consultarAlumno(String dni);
-	public List<Alumno> ListarAlumnos();
+	public List<Alumno> ListarTodosAlumnos();
 
 }
