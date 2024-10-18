@@ -14,7 +14,8 @@ public class AlumnoServiceImp implements IAlumnoService{
 	@Override
 	public void guardarAlumno(Alumno alumno) {
 		// TODO Auto-generated method stub
-		AlmacenAlumnos.AlmacenAlumnos.add(alumno);
+		AlmacenAlumnos.alumnos.add(alumno);
+		System.out.println(AlmacenAlumnos.alumnos.get(0).getDni());
 		
 	}
 
@@ -37,9 +38,10 @@ public class AlumnoServiceImp implements IAlumnoService{
 	}
 
 	@Override
-	public List<Alumno> ListarAlumnos() {
+	public List<Alumno> ListarTodosAlumnos() {
 		// TODO Auto-generated method stub
-		return null;
+		//filtrar por alumno en estado activo
+		return AlmacenAlumnos.alumnos;
 	}
 
 }

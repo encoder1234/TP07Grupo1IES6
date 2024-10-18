@@ -7,6 +7,7 @@ public class Alumno {
     private String nombre;
     private String apellido;
     private String dni;
+    private boolean estado;
     public Alumno() {
 		// TODO Auto-generated constructor stub
 	}
@@ -19,6 +20,9 @@ public class Alumno {
 	public String getDni() {
 		return dni;
 	}
+	public boolean isEstado() {
+		return estado;
+	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -28,5 +32,7 @@ public class Alumno {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-    
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 }
