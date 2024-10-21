@@ -1,6 +1,7 @@
 package ar.edu.ies6.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,24 +15,13 @@ public class AlumnoController {
 	
 	@Autowired
 	Alumno unAlumno;
+	@Qualifier("servicioAlumnoBD")
 	@Autowired
 	IAlumnoService alumnoService;
 	
-	@GetMapping("/index")
-	public String getIndex() {
-		System.out.println("esta pasando por aqui");
-		return "index";
-		}
 @GetMapping("/Alumno")
 public ModelAndView getIndexWithAlumno() {
 	//codigo
-	//creado el alumno
-//Patron de diseño SINGLETON
-//Alumno unAlumno = new Alumno();
-//unAlumno.setApellido("Jaime");
-//unAlumno.setNombre("Nose");
-//unAlumno.setDni("44015619");
-
 
 	//transporte hacia la vista
 ModelAndView Transportador = new ModelAndView("index");
