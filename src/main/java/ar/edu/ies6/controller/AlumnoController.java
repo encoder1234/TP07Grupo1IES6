@@ -17,7 +17,7 @@ public class AlumnoController {
 	@Autowired
 	IAlumnoService alumnoService;
 	
-	@GetMapping("/index")
+	@GetMapping("/alumno/index")
 	public String getIndex() {
 		System.out.println("esta pasando por aqui");
 		return "index";

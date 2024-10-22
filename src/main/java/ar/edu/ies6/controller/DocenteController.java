@@ -12,7 +12,7 @@ import ar.edu.ies6.service.imp.DocenteServiceImp;
 public class DocenteController {
 
 
-	@GetMapping("/index")
+	@GetMapping("/docente/index")
 	public String getIndex() {
 		System.out.println("esta pasando por aqui");
 		return "index";
