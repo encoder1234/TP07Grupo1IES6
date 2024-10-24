@@ -6,7 +6,5 @@ import java.util.List;
 import ar.edu.ies6.model.Docente;
 
 public class AlmacenDocentes {
-
-public static List<Docente> AlmacenDocentes= new ArrayList<Docente>();
-   
+    public static List<Docente> docentes = new ArrayList<Docente>(); 
 }

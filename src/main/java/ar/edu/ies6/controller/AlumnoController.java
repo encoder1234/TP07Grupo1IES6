@@ -43,5 +43,5 @@ public ModelAndView guardarAlumno(Alumno alumno) {
 	Transportador.addObject("listadoAlumnos",alumnoService.ListarTodosAlumnos());
 	return Transportador;
 }
-	
+
 }
