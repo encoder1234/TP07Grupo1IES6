@@ -31,7 +31,7 @@ public ModelAndView getIndexWithDocente() {
 	//codigo
 
 	//transporte hacia la vista
-ModelAndView Transportador = new ModelAndView("index");
+ModelAndView Transportador = new ModelAndView("formDocente");
 Transportador.addObject("docente", unDocente);
 return Transportador;
 }

@@ -19,10 +19,10 @@ public class AlumnoController {
 	@Autowired
 	IAlumnoService alumnoService;
 	
-@GetMapping("/alumno/index")
+@GetMapping("/Grupo1")
 public String getIndex() {
     System.out.println("esta pasando por aqui");
-    return "index";
+    return "grupo1";
 }
 
 @GetMapping("/Alumno")
@@ -30,7 +30,7 @@ public ModelAndView getIndexWithAlumno() {
 	//codigo
 
 	//transporte hacia la vista
-ModelAndView Transportador = new ModelAndView("index");
+ModelAndView Transportador = new ModelAndView("formAlumno");
 Transportador.addObject("alumno", unAlumno);
 return Transportador;
 }

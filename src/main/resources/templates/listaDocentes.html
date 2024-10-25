@@ -11,15 +11,16 @@
 <div class="container-fluid">
 <table class="table table-striped-columns table-primary">
 <tr>
-   <th>DNI</th>
+   
     <th>Nombre</th>
      <th>Apellido</th>
+     <th>DNI</th>
       <th>Ediccion</th>
       </tr>
-      <tr data-th-each="alumno :${listadoAlumnos}">
-      <td data-th-text="${alumno.dni}"></td>
-      <td data-th-text="${alumno.nombre}"></td>
-      <td data-th-text="${alumno.apellido}"></td>
+      <tr data-th-each="docente :${listadoDocentes}">
+      <td data-th-text="${docente.nombre}"></td>
+      <td data-th-text="${docente.apellido}"></td>
+      <td data-th-text="${docente.dni}"></td>
       <td><a class="btn btn-danger">Borrar</a>
       <a class="btn btn-success">Editar</a>
       </tr>
