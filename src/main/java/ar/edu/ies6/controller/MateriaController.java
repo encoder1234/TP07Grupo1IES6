@@ -21,7 +21,7 @@ public class MateriaController {
 
     @GetMapping("/Materia")
     public ModelAndView getIndexWithMateria() {
-        ModelAndView Transportador = new ModelAndView("index");
+        ModelAndView Transportador = new ModelAndView("formMateria");
         Transportador.addObject("materia", unaMateria);
         return Transportador;
     }
