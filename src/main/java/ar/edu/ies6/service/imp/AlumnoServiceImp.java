@@ -46,4 +46,10 @@ System.out.println(AlmacenAlumnos.alumnos.get(0).getDni()); // o puedes comentar
 		return AlmacenAlumnos.alumnos;
 	}
 
+	@Override
+	public List<Alumno> ListarAlumnosActivos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

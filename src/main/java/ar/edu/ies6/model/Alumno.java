@@ -1,14 +1,11 @@
 package ar.edu.ies6.model;
 
 import org.springframework.stereotype.Component;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
 @Component
 @Entity
-
 public class Alumno {
 	@Column
     private String nombre;
