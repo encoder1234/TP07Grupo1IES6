@@ -34,6 +34,7 @@ AlumnoRepository alumnoRepository;
 	@Override
 	public void consultarAlumno(String dni) {
 		// TODO Auto-generated method stub	
+		return alumnoRepository.findById(dni).get();
 	}
 	@Override
 	public List<Alumno> ListarTodosAlumnos() {

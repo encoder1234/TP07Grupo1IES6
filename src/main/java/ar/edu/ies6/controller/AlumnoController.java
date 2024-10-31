@@ -29,6 +29,15 @@ public ModelAndView getIndexWithAlumno() {
 	//transporte hacia la vista
 ModelAndView Transportador = new ModelAndView("formAlumno");
 Transportador.addObject("alumno", unAlumno);
+transportador.addObject("band", false);
+return Transportador;
+}
+@GetMapping("/ListadoAlumnos")
+public ModelAndView getAllAlumno() {
+	//codigo
+	//transporte hacia la vista
+ModelAndView Transportador = new ModelAndView("ListaAlumnos");
+Transportador.addObject("listadoAlumnos" alumnoService.ListarAlumnosActivos());
 return Transportador;
 }
 @PostMapping("/guardarAlumno")
@@ -47,5 +56,15 @@ public ModelAndView deleteAlumno (@PathVariable (name="dni") String dni){
 	 ModelAndView modelView = new ModelAndView ("ListaAlumnos");
 	 modelView.addObject("listadoAlumnos",alumnoService.ListarAlumnosActivos());
 	 return modelView;
+}
+//modificar
+@GetMapping ("/modificarAlumno/{dni}")
+public ModelAndView ModificarAlumno(@PathVariable (name="dni") String dni) {
+	//el parametro de ModelAndView es una vista HTML
+	ModelAndView modelView = new ModelAndView ("ListaAlumnos");
+	modelView.addObject("alumno",alumnoService.consultarAlumno(dni));
+	modelView.addObject("band", true);
+	
+	return modelView;
 }
 }
