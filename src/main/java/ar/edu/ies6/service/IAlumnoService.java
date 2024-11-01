@@ -9,7 +9,7 @@ public interface IAlumnoService {
 	public void guardarAlumno(Alumno alumno);
 	public void eliminarAlumno(String dni);
 	public void modificarAlumno(Alumno alumnoModificado);
-	public void consultarAlumno(String dni);
+	public Alumno consultarAlumno(String dni);
 	public List<Alumno> ListarTodosAlumnos();
 	public List<Alumno> ListarAlumnosActivos();
 }

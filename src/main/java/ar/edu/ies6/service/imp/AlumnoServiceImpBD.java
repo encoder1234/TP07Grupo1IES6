@@ -32,7 +32,7 @@ AlumnoRepository alumnoRepository;
 		// TODO Auto-generated method stub
 	}
 	@Override
-	public void consultarAlumno(String dni) {
+	public Alumno consultarAlumno(String dni) {
 		// TODO Auto-generated method stub	
 		return alumnoRepository.findById(dni).get();
 	}
@@ -47,3 +47,4 @@ AlumnoRepository alumnoRepository;
 		return (List<Alumno>) alumnoRepository.findByEstado(true);
 	}
 }
+
