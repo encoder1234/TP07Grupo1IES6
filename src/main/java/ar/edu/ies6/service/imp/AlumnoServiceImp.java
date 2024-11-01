@@ -34,7 +34,7 @@ System.out.println(AlmacenAlumnos.alumnos.get(0).getDni()); // o puedes comentar
 	}
 
 	@Override
-	public void consultarAlumno(String dni) {
+	public Alumno consultarAlumno(String dni) {
 		// TODO Auto-generated method stub
 		
 	}
