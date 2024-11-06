@@ -35,7 +35,7 @@ System.out.println(AlmacenDocentes.docentes.get(0).getDni()); // o puedes coment
 	}
 
 	@Override
-	public void consultarDocente(String dni) {
+	public Docente consultarDocente(String dni) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -48,7 +48,7 @@ System.out.println(AlmacenDocentes.docentes.get(0).getDni()); // o puedes coment
 	}
 
 	@Override
-	public List<Docente> ListarTodosDocentesActivos() {
+	public List<Docente> ListarDocentesActivos() {
 		// TODO Auto-generated method stub
 		return null;
 	}

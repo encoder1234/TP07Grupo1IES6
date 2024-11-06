@@ -7,23 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import ar.edu.ies6.model.Alumno;
 import ar.edu.ies6.model.Docente;
 import ar.edu.ies6.repository.DocenteRepository;
 import ar.edu.ies6.service.IDocenteService;
 
 @Service
 @Qualifier("servicioDocenteBD")
-public class DocenteServiceImpBD implements IDocenteService{
-	
+public class DocenteServiceImpBD implements IDocenteService{	
 @Autowired
 DocenteRepository docenteRepository;
 	@Override
 	public void guardarDocente(Docente docente) {
 		// TODO Auto-generated method stub
 		//guardar en la BD
-		
 		docente.setEstado(true);
-		
 		docenteRepository.save(docente);
 	}
 
@@ -43,7 +41,7 @@ DocenteRepository docenteRepository;
 
 	@Override
 	public Docente consultarDocente(String dni) {
-		return null;
+		return docenteRepository.findById(dni).get();
 		// TODO Auto-generated method stub
 	
 	}
@@ -51,13 +49,13 @@ DocenteRepository docenteRepository;
 	@Override
 	public List<Docente> ListarTodosDocentes() {
 		// TODO Auto-generated method stub
-		return (List<Docente>) docenteRepository.findByEstado(true);
+		return (List<Docente>) docenteRepository.findAll();
 	}
 
 	@Override
-	public List<Docente> ListarTodosDocentesActivos() {
+	public List<Docente> ListarDocentesActivos(){
 		// TODO Auto-generated method stub
-		return null;
+		return (List<Docente>) docenteRepository.findByEstado(true);
 	}
 
 }

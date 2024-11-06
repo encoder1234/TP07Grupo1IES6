@@ -18,11 +18,7 @@ public class DocenteController {
 	@Qualifier("servicioDocenteBD")
 	@Autowired
 	IDocenteService docenteService;
-@GetMapping("/Grupo1")
-public String getIndex() {
-    System.out.println("esta pasando por aqui");
-    return "grupo1";
-}
+
 @GetMapping("/Docente")
 public ModelAndView getIndexWithDocente() {
 	//codigo
@@ -45,7 +41,7 @@ public ModelAndView guardarDocentes(Docente docente) {
 	//DocenteServiceImp docenteService = new DocenteServiceImp();
 	docenteService.guardarDocente(docente);
 	ModelAndView Transportador = new ModelAndView("listaDocentes");
-	Transportador.addObject("listadoDocentes",docenteService.ListarTodosDocentesActivos());
+	Transportador.addObject("listadoDocentes",docenteService.ListarDocentesActivos());
 	return Transportador;
 }
 //eliminar
@@ -54,7 +50,7 @@ public ModelAndView deleteDocente (@PathVariable (name="dni") String dni){
 	docenteService.eliminarDocente(dni);
 	//mostrar el nuevo listado
 	 ModelAndView modelView = new ModelAndView ("listaDocentes");
-	 modelView.addObject("listadoDocentes",docenteService.ListarTodosDocentes());
+	 modelView.addObject("listadoDocentes",docenteService.ListarDocentesActivos());
 	 return modelView;
 }
 //modificar

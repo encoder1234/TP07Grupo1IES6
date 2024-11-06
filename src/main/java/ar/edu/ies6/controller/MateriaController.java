@@ -20,12 +20,6 @@ public class MateriaController {
     @Autowired
     IMateriaService materiaService;
 
-    @GetMapping("/Grupo1")
-    public String getIndex() {
-        System.out.println("esta pasando por aqui");
-        return "grupo1";
-    }
-
     @GetMapping("/Materia")
     public ModelAndView getIndexWithMateria() {
         ModelAndView Transportador = new ModelAndView("formMateria");
@@ -46,22 +40,22 @@ public class MateriaController {
     public ModelAndView guardarMateria(Materia materia) {
         materiaService.guardarMateria(materia);
         ModelAndView Transportador = new ModelAndView("listaMaterias");
-        Transportador.addObject("listadoMaterias", materiaService.listarTodasMaterias());
+        Transportador.addObject("listadoMaterias", materiaService.listarMateriasActivas());
         return Transportador;
     }
 
     // eliminar materia
     @GetMapping("/eliminarMateria/{codigo}")
-    public ModelAndView deleteMateria(@PathVariable(name = "codigo") String codigo) {
+    public ModelAndView deleteMateria(@PathVariable(name="codigo") String codigo) {
         materiaService.eliminarMateria(codigo);
         ModelAndView modelView = new ModelAndView("listaMaterias");
-        modelView.addObject("listadoMaterias", materiaService.listarTodasMaterias());
+        modelView.addObject("listadoMaterias", materiaService.listarMateriasActivas());
         return modelView;
     }
 
     // modificar materia
     @GetMapping("/modificarMateria/{codigo}")
-    public ModelAndView modificarMateria(@PathVariable(name = "codigo") String codigo) {
+    public ModelAndView modificarMateria(@PathVariable(name="codigo") String codigo) {
         ModelAndView modelView = new ModelAndView("formMateria");
         modelView.addObject("materia", materiaService.consultarMateria(codigo));
         modelView.addObject("band", true); 
