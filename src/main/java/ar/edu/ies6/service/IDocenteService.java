@@ -1,3 +1,4 @@
+
 package ar.edu.ies6.service;
 
 
@@ -13,7 +14,8 @@ public interface IDocenteService {
 	public void guardarDocente(Docente docente);
 	public void eliminarDocente(String dni);
 	public void modificarDocente(Docente docenteModificado);
-	public void consultarDocente(String dni);
+	public Docente consultarDocente(String dni);
 	public List<Docente> ListarTodosDocentes();
+	public List<Docente> ListarTodosDocentesActivos();
 
 }

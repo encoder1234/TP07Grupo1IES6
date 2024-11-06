@@ -47,4 +47,11 @@ System.out.println(AlmacenDocentes.docentes.get(0).getDni()); // o puedes coment
 		return AlmacenDocentes.docentes;
 	}
 
+	@Override
+	public List<Docente> ListarTodosDocentesActivos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
+
