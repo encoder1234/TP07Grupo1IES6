@@ -11,9 +11,9 @@ public class Materia {
 
     @Column
     private String nombre;
-    @Column
-    private String codigo;
     @Id
+    private String codigo;
+    @Column
     private String id;
     @Column
     private Boolean estado;

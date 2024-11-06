@@ -20,7 +20,7 @@
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="/listadoDocentes">Lista Docentes</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,7 +55,7 @@
 <input type="text" data-th-field= "${docente.apellido}"></input>
 <br>
 <label>DNI</label>
-<input type="number" data-th-field= "${docente.dni}"></input>
+<input type="number" data-th-field= "${docente.dni}" data-th-readonly=${band}></input>
 <br>
 <div class="col">
 <input type="submit" value= "Guardar Docente"></input>

@@ -12,9 +12,8 @@ import ar.edu.ies6.service.IMateriaService;
 @Service
 @Qualifier("servicioMateriaBD")
 public class MateriaServiceImpBD implements IMateriaService {
-
-    @Autowired
-    MateriaRepository materiaRepository;
+@Autowired
+MateriaRepository materiaRepository;
 
     @Override
     public void guardarMateria(Materia materia) {
