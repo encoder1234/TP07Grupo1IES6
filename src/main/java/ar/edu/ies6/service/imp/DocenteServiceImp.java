@@ -18,7 +18,7 @@ public class DocenteServiceImp implements IDocenteService{
 		// TODO Auto-generated method stub
 AlmacenDocentes.docentes.add(docente);
 
-System.out.println(AlmacenDocentes.docentes.get(0).getLegajo()); // o puedes comentar esta línea si no la necesitas.
+System.out.println(AlmacenDocentes.docentes.get(0).getLegajo());
 
 	}
 

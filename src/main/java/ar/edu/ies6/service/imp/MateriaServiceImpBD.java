@@ -12,7 +12,7 @@ import ar.edu.ies6.repository.MateriaRepository;
 import ar.edu.ies6.service.IMateriaService;
 
 @Service
-@Qualifier("servicioMateriaBD")  // Nombre único para esta implementación
+@Qualifier("servicioMateriaBD")  
 public class MateriaServiceImpBD implements IMateriaService {
 
     @Autowired
@@ -20,7 +20,7 @@ public class MateriaServiceImpBD implements IMateriaService {
 
     @Override
     public void guardarMateria(Materia materia) {
-        materia.setEstado(true);
+        materia.setEstado(true); 
         materiaRepository.save(materia);
     }
 
@@ -29,7 +29,7 @@ public class MateriaServiceImpBD implements IMateriaService {
         Optional<Materia> materiaEncontrada = materiaRepository.findById(codigo);
         if (materiaEncontrada.isPresent()) {
             Materia materia = materiaEncontrada.get();
-            materia.setEstado(false);
+            materia.setEstado(false); //ocultar
             materiaRepository.save(materia);
         }
     }
@@ -40,7 +40,7 @@ public class MateriaServiceImpBD implements IMateriaService {
         if (materiaExistente.isPresent()) {
             Materia materia = materiaExistente.get();
             materia.setNombre(materiaModificada.getNombre());
-            materia.setEstado(materiaModificada.isEstado());
+            materia.setEstado(materiaModificada.getEstado());  
             materiaRepository.save(materia);
         }
     }
@@ -48,16 +48,22 @@ public class MateriaServiceImpBD implements IMateriaService {
     @Override
     public Materia consultarMateria(String codigo) {
         Optional<Materia> materiaEncontrada = materiaRepository.findById(codigo);
-        return materiaEncontrada.orElse(null);
+        return materiaEncontrada.orElse(null);  // Retorna la materia o null si no existe
     }
 
     @Override
     public List<Materia> listarTodasMaterias() {
-        return (List<Materia>) materiaRepository.findAll();
+        return (List<Materia>) materiaRepository.findAll();  // Retorna todas las materias
     }
 
     @Override
     public List<Materia> listarMateriasActivas() {
-        return materiaRepository.findByEstado(true);
+        return materiaRepository.findByEstado(true);  // Filtra las materias activas
     }
+
+	@Override
+	public void ocultarMateria(String codigo) {
+		// TODO Auto-generated method stub
+		
+	}
 }

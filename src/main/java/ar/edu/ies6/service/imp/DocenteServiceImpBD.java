@@ -2,11 +2,9 @@ package ar.edu.ies6.service.imp;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
 import ar.edu.ies6.model.Docente;
 import ar.edu.ies6.repository.DocenteRepository;
 import ar.edu.ies6.service.IDocenteService;
@@ -25,8 +23,8 @@ public class DocenteServiceImpBD implements IDocenteService {
     }
 
     @Override
-    public void eliminarDocente(Integer legajo) { // Cambiado String a Integer
-        Optional<Docente> docenteEncontrado = docenteRepository.findById(legajo); // Cambiado String a Integer
+    public void eliminarDocente(Integer legajo) { 
+        Optional<Docente> docenteEncontrado = docenteRepository.findById(legajo); 
         if (docenteEncontrado.isPresent()) {
             docenteEncontrado.get().setEstado(false);
             docenteRepository.save(docenteEncontrado.get());
@@ -35,13 +33,13 @@ public class DocenteServiceImpBD implements IDocenteService {
 
     @Override
     public void modificarDocente(Docente docenteModificado) {
-        // Implementación pendiente
+        
     }
 
     @Override
-    public Docente consultarDocente(Integer legajo) { // Cambiado String a Integer
-        Optional<Docente> docenteEncontrado = docenteRepository.findById(legajo); // Cambiado String a Integer
-        return docenteEncontrado.orElse(null); // Retorna null si no se encuentra
+    public Docente consultarDocente(Integer legajo) {
+        Optional<Docente> docenteEncontrado = docenteRepository.findById(legajo);
+        return docenteEncontrado.orElse(null);
     }
 
     @Override
