@@ -12,9 +12,9 @@ import ar.edu.ies6.model.Docente;
 public interface IDocenteService {
 	//crud
 	public void guardarDocente(Docente docente);
-	public void eliminarDocente(String dni);
+	public void eliminarDocente(Integer legajo);
 	public void modificarDocente(Docente docenteModificado);
-	public Docente consultarDocente(String dni);
+	public Docente consultarDocente(Integer legajo);
 	public List<Docente> ListarTodosDocentes();
 	public List<Docente> ListarDocentesActivos();
 
