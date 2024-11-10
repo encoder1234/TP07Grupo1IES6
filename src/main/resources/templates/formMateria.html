@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,24 +18,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <!-- Enlace de Inicio, redirige a la ruta raíz o la que hayas definido -->
                         <a class="nav-link active" aria-current="page" href="/inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <!-- Enlace a la lista de materias -->
                         <a class="nav-link" href="/listadoMaterias">Lista Materias</a>
                     </li>
                     <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Opciones
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/Alumno">Alumnos</a></li>
-            <li><a class="dropdown-item" href="/Materia">Materias</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/Docente">Docentes</a></li>
-          </ul>
-        </li>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Opciones
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Alumno">Alumnos</a></li>
+                            <li><a class="dropdown-item" href="/Materia">Materias</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Docente">Docentes</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -45,36 +43,45 @@
 <h1>Carga de Materias</h1>
 <p>Ingrese los Datos Solicitados</p>
 
+<!-- Formulario de carga de materia -->
 <form th:object="${materia}" th:action="@{/guardarMateria}" method="post">
-    <label>Nombre</label>
-    <input type="text" th:field="*{nombre}" class="form-control"/>
-    <br>
-    <label>Codigo</label>
-    <input type="text" th:field="*{codigo}" th:readonly="${band}" class="form-control"/>
-    <br>
-    <label>Año</label>
-    <select id="curso" th:field="*{año}" class="form-select">
-        <option th:each="curso : ${T(ar.edu.ies6.util.Año).values()}"
-                th:value="${curso.name()}"
-                th:text="${curso}"></option>
-    </select>
-    <br>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" th:field="*{nombre}" class="form-control" required/>
+    </div>
+    
+    <div class="mb-3">
+        <label for="codigo" class="form-label">Código</label>
+        <input type="text" id="codigo" th:field="*{codigo}" th:readonly="${band}" class="form-control" required/>
+    </div>
 
-    <label>Docente</label>
-    <select id="docente" name="docente" th:field="*{docente}" class="form-select">
-        <option value="" selected disabled>Seleccione un docente</option>
-        <option th:each="docente : ${listadoDocentes}"
-                th:value="${docente.legajo}"
-                th:text="${docente.nombre} + ' ' + ${docente.apellido}"></option>
-    </select>
-    <br>
+    <div class="mb-3">
+        <label for="año" class="form-label">Año</label>
+        <select id="año" th:field="*{año}" class="form-select" required>
+            <option th:each="curso : ${T(ar.edu.ies6.util.Año).values()}"
+                    th:value="${curso.name()}"
+                    th:text="${curso}"></option>
+        </select>
+    </div>
 
-    <div class="col">
-        <input type="submit" value="Guardar Materia" class="btn btn-primary"/>
+    <div class="mb-3">
+        <label for="docente" class="form-label">Docente</label>
+        <select id="docente" th:field="*{docente}" class="form-select" required>
+            <option value="" selected disabled>Seleccione un docente</option>
+            <option th:each="docente : ${listadoDocentes}" 
+                    th:value="${docente.legajo}" 
+                    th:text="${docente.nombre} + ' ' + ${docente.apellido}"></option>
+        </select>
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Guardar Materia</button>
     </div>
 </form>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

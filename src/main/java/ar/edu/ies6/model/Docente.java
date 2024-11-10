@@ -26,43 +26,32 @@ public class Docente {
 
     //@OneToMany(mappedBy = "docente") 
     //private List<Materia> materias; 
-
     public Docente() {
         // Constructor vacío
     }
-
     // Getters y setters
     public String getNombre() {
         return nombre;
     }
-
     public String getApellido() {
         return apellido;
     }
-
     public Integer getLegajo() {
         return legajo;
     }
-
     public Boolean isEstado() {
         return estado;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-
     public void setLegajo(Integer legajo) {
         this.legajo = legajo;
     }
-
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
-
-    
 }

@@ -44,11 +44,11 @@ public class AlumnoServiceImp implements IAlumnoService {
 
     @Override
     public Alumno consultarAlumno(String dni) {
-        // Buscar un alumno por DNI y devolverlo
+        // Buscar un alumno por dni
         return AlmacenAlumnos.alumnos.stream()
                 .filter(alumno -> alumno.getDni().equals(dni))
                 .findFirst()
-                .orElse(null); // Devuelve null si no se encuentra
+                .orElse(null); // devuleve nada
     }
 
     @Override
@@ -60,7 +60,7 @@ public class AlumnoServiceImp implements IAlumnoService {
     public List<Alumno> ListarAlumnosActivos() {
         // Filtra solo los alumnos activos
         return AlmacenAlumnos.alumnos.stream()
-                .filter(Alumno::isEstado) // Verifica si el estado es activo
+                .filter(Alumno::isEstado) // Verifica of/on
                 .toList();
     }
 }
