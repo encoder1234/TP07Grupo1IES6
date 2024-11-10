@@ -18,12 +18,12 @@ public class DocenteServiceImp implements IDocenteService{
 		// TODO Auto-generated method stub
 AlmacenDocentes.docentes.add(docente);
 
-System.out.println(AlmacenDocentes.docentes.get(0).getDni()); // o puedes comentar esta línea si no la necesitas.
+System.out.println(AlmacenDocentes.docentes.get(0).getLegajo()); // o puedes comentar esta línea si no la necesitas.
 
 	}
 
 	@Override
-	public void eliminarDocente(String dni) {
+	public void eliminarDocente(Integer legajo) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -35,9 +35,9 @@ System.out.println(AlmacenDocentes.docentes.get(0).getDni()); // o puedes coment
 	}
 
 	@Override
-	public Docente consultarDocente(String dni) {
+	public Docente consultarDocente(Integer legajo) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	@Override
@@ -52,6 +52,8 @@ System.out.println(AlmacenDocentes.docentes.get(0).getDni()); // o puedes coment
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }
 
