@@ -16,6 +16,7 @@
                 <th>Nombre</th>
                 <th>Código</th>
                 <th>Año</th>
+                <th>Docente</th>
                 <th>Edición</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td th:text="${materia.nombre}"></td>
                 <td th:text="${materia.codigo}"></td>
                 <td th:text="${materia.año}"></td>
+                <td th:text="${materia.docente.apellido}"></td>
                 <td>
                     <a class="btn btn-danger" th:href="@{'/eliminarMateria/'+${materia.codigo}}">Borrar</a>
                     <a class="btn btn-success" th:href="@{'/modificarMateria/'+${materia.codigo}}">Editar</a>
